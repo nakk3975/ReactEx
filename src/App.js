@@ -8,8 +8,10 @@ function App() {
 
   let post = '강남 우동 맛집';
   let [글제목, titleChange] = useState(['남자 코트 추천', '맛집 추천', '리액트독학']);
-
+  
   let [logo, setLogo] = useState('ReactBlog');
+  let [좋아요, 좋아요변경] = useState([0,0,0]);
+  let [modal, setModal] = useState(false);
   
   // STATE 쓰는 이유
   // 일반 변수는 갑자기 변경되면 HTML에 자동으로 반영 안됨
@@ -21,10 +23,11 @@ function App() {
 
   //let a = num[0];
   //let c = num[1];
-  let [좋아요, 좋아요변경] = useState(0);
 
-  function plusLike() {
-    좋아요변경(좋아요+1);
+  function plusLike(i) {
+    let copy = [...좋아요]; 
+    copy[i] = copy[i] + 1;
+    좋아요변경(copy);
   }
 
   function changeTitle() {
@@ -49,22 +52,40 @@ function App() {
       <button type="button" onClick={sort}>가나다순 정렬</button>
       <button type='button' onClick={changeTitle}>제목 변경</button>
       
-      <div className="list">
-        <h4>{ 글제목[0] } <span onClick={plusLike}>❤️</span> {좋아요} </h4>
+      {/* <div className="list">
+        <h4 onClick={() => {setModal(!modal)}}>{ 글제목[0] } <span onClick={plusLike}>❤️</span> {좋아요} </h4>
+        {
+          modal == true ? <Modal></Modal> : null
+        } 
         <p>5월 7일</p>
       </div>
 
       <div className="list">
-        <h4>{ 글제목[1] }</h4>
+        <h4 onClick={() => {setModal(!modal)}}>{ 글제목[1] }</h4>
+        {
+          modal == true ? <Modal></Modal> : null
+        } 
         <p>5월 7일</p>
       </div>
 
       <div className="list">
-        <h4>{ 글제목[2] }</h4>
+        <h4 onClick={() => {setModal(!modal)}}>{ 글제목[2] }</h4>
+        {
+          modal == true ? <Modal></Modal> : null
+        } 
         <p>5월 7일</p>
-      </div>
-
-      <Modal></Modal>
+      </div> */}
+      
+      {
+        글제목.map(function(a, i) {
+          return (
+            <div className="list" key={i}>
+              <h4 onClick={() => {setModal(!modal)}}>{ 글제목[i] } <span onClick={() => {plusLike(i)}}>❤️</span>{좋아요[i]} </h4>
+              <p>날짜</p>
+            </div>
+          );
+        })
+      }
 
     </div>
   );
@@ -75,7 +96,7 @@ function App() {
 
 function Modal() {
   return (
-    <div ckassName="modal">
+    <div className="modal">
       <h4>제목</h4>
       <p>날짜</p>
       <p>상세내용</p>
