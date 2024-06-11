@@ -52,3 +52,10 @@ div {
     transform: rotate(360deg);
   }
 }
+
+.modal {
+  padding-left: 10px;
+  padding:10px;
+  text-align: left;
+  background-color: darkgrey;
+}
