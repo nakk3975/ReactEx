@@ -1,5 +1,7 @@
 # ReactEx
 
+> 프런트엔드 학습 · React 기초
+
 React의 기본 문법과 상태 관리 방식을 익히기 위해 만든 블로그 형태의 실습 프로젝트입니다.
 
 ## 주요 실습 내용
@@ -16,10 +18,21 @@ React의 기본 문법과 상태 관리 방식을 익히기 위해 만든 블로
 
 ## 기술 스택
 
-- React 18
-- JavaScript
-- Create React App
-- CSS
+| 영역 | 기술 |
+| --- | --- |
+| 프레임워크·라이브러리 | React 18 |
+| 언어 | JavaScript |
+| 개발 도구 | Create React App |
+| 화면 | CSS |
+
+## 코드 둘러보기
+
+| 위치 | 내용 |
+| --- | --- |
+| [src/App.js](src/App.js) | 블로그 예제와 상태 관리 |
+| [src/App.css](src/App.css) | 앱 스타일 |
+| [src/index.js](src/index.js) | React 진입점 |
+| [package.json](package.json) | 의존성과 실행 명령 |
 
 ## 실행 방법
 
@@ -37,3 +50,7 @@ npm run build
 ## 목적
 
 React를 처음 학습하면서 state, 이벤트, 컴포넌트, 배열 상태 변경 등 기본 개념을 직접 코드로 확인하기 위한 실습 저장소입니다.
+
+---
+
+**함께 보기** · [ReactShopping](https://github.com/nakk3975/ReactShopping) · [PWA-Test](https://github.com/nakk3975/PWA-Test)
