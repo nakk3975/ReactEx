@@ -1,5 +1,7 @@
 # ReactEx
 
+[개발자 소개 · 전체 프로젝트](https://github.com/nakk3975/TripPlan/blob/main/PORTFOLIO.md)
+
 > 프런트엔드 학습 · React 기초
 
 React의 기본 문법과 상태 관리 방식을 익히기 위해 만든 블로그 형태의 실습 프로젝트입니다.
